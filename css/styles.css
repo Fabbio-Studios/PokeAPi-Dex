@@ -130,13 +130,19 @@ input[type="text"], input[type="number"] {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.1s;
     font-family: 'Comfortaa', sans-serif; /* Garantindo a mesma fonte */
 }
 
 .btn:hover {
     background-color: #424242;
 }
+
+.btn:active {
+    transform: scale(0.95); /* Faz o botão parecer que afunda */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adiciona sombra para efeito de profundidade */
+}
+
 
 .controls {
     display: flex;
@@ -161,78 +167,25 @@ input[type="text"], input[type="number"] {
     margin-right: 5px;
 }
 
-.type-fire {
-    background: linear-gradient(135deg, #F08030, #D96F28);
-  }
-  
-  .type-water {
-    background: linear-gradient(135deg, #6890F0, #567ACB);
-  }
-  
-  .type-grass {
-    background: linear-gradient(135deg, #78C850, #66A745);
-  }
-  
-  .type-electric {
-    background: linear-gradient(135deg, #F8D030, #D1B327);
-  }
-  
-  .type-ice {
-    background: linear-gradient(135deg, #98D8D8, #81B8B8);
-  }
-  
-  .type-fighting {
-    background: linear-gradient(135deg, #C03028, #9F2A22);
-  }
-  
-  .type-poison {
-    background: linear-gradient(135deg, #A040A0, #873688);
-  }
-  
-  .type-ground {
-    background: linear-gradient(135deg, #E0C068, #C5A456);
-  }
-  
-  .type-flying {
-    background: linear-gradient(135deg, #A890F0, #8B76D9);
-  }
-  
-  .type-psychic {
-    background: linear-gradient(135deg, #F85888, #D64972);
-  }
-  
-  .type-bug {
-    background: linear-gradient(135deg, #A8B820, #909C1B);
-  }
-  
-  .type-rock {
-    background: linear-gradient(135deg, #B8A038, #9C8730);
-  }
-  
-  .type-ghost {
-    background: linear-gradient(135deg, #705898, #5C4A7D);
-  }
-  
-  .type-dark {
-    background: linear-gradient(135deg, #705848, #5D493C);
-  }
-  
-  .type-normal {
-    background: linear-gradient(135deg, #A8A878, #8F8F67);
-  }
-  
-  .type-dragon {
-    background: linear-gradient(135deg, #7038F8, #5E2ECB);
-  }
-  
-  .type-steel {
-    background: linear-gradient(135deg, #B8B8D0, #9E9EB3);
-  }
-  
-  .type-fairy {
-    background: linear-gradient(135deg, #EE99AC, #C98495);
-  }
-  
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-grass { background-color: #78C850; }
+.type-electric { background-color: #F8D030; }
+.type-ice { background-color: #98D8D8; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dark { background-color: #705848; }
+.type-normal { background-color: #A8A878; }
+.type-dragon { background-color: #7038F8; }
+.type-steel { background-color: #B8B8D0; }
+.type-fairy { background-color: #EE99AC; }
+
 
 .pokedex-screen {
     border: 2px solid #ccc;
