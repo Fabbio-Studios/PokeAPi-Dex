@@ -19,8 +19,13 @@ async function fetchPokemonData(pokemonId) {
             // Atualizando informações na Pokédex
             document.getElementById('name').innerText = `Nome: ${capitalize(pokemonData.name)}`;
             document.getElementById('national-dex').innerText = `Número: ${pokemonData.id}`;
-            document.getElementById('sprite').src = pokemonData.sprites.front_default;
-            document.getElementById('sprite-back').src = pokemonData.sprites.back_default; // Adicione esta linha
+            
+            // Usando sprites GIF do Showdown
+            const frontGif = pokemonData.sprites.other.showdown.front_default;
+            const backGif = pokemonData.sprites.other.showdown.back_default;
+            document.getElementById('sprite').src = frontGif || pokemonData.sprites.front_default;
+            document.getElementById('sprite-back').src = backGif || pokemonData.sprites.back_default;
+            
             document.getElementById('type').innerText = `Tipo: ${pokemonData.types.map(type => capitalize(type.type.name)).join(', ')}`;
             document.getElementById('ability').innerText = `Habilidade: ${capitalize(pokemonData.abilities[0].ability.name)}`;
             document.getElementById('average-status').innerText = `Média de Status: ${averageStats}`; // Atualiza a média
@@ -50,7 +55,6 @@ async function fetchPokemonData(pokemonId) {
         console.error('Erro ao buscar dados do Pokémon:', error);
     }
 }
-
 
 function playCry() {
     const cryUrl = document.getElementById('cry').dataset.cryUrl;
